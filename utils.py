@@ -21,8 +21,8 @@ def load_mnist(batch_size, is_training=True):
         valX = trainX[55000:, ] / 255.
         valY = trainY[55000:]
 
-        num_tr_batch = 55000 // batch_size
-        num_val_batch = 5000 // batch_size
+        num_tr_batch = 55000 # batch_size
+        num_val_batch = 5000 # batch_size
 
         return trX, trY, num_tr_batch, valX, valY, num_val_batch
     else:
@@ -34,7 +34,7 @@ def load_mnist(batch_size, is_training=True):
         loaded = np.fromfile(file=fd, dtype=np.uint8)
         teY = loaded[8:].reshape((10000)).astype(np.int32)
 
-        num_te_batch = 10000 // batch_size
+        num_te_batch = 10000 # batch_size
         return teX / 255., teY, num_te_batch
 
 
@@ -55,8 +55,8 @@ def load_fashion_mnist(batch_size, is_training=True):
         valX = trainX[55000:, ] / 255.
         valY = trainY[55000:]
 
-        num_tr_batch = 55000 // batch_size
-        num_val_batch = 5000 // batch_size
+        num_tr_batch = 55000 # batch_size
+        num_val_batch = 5000 # batch_size
 
         return trX, trY, num_tr_batch, valX, valY, num_val_batch
     else:
@@ -68,7 +68,7 @@ def load_fashion_mnist(batch_size, is_training=True):
         loaded = np.fromfile(file=fd, dtype=np.uint8)
         teY = loaded[8:].reshape((10000)).astype(np.int32)
 
-        num_te_batch = 10000 // batch_size
+        num_te_batch = 10000 # batch_size
         return teX / 255., teY, num_te_batch
 
 
@@ -123,7 +123,7 @@ def reduce_sum(input_tensor, axis=None, keepdims=False):
     try:
         return tf.reduce_sum(input_tensor, axis=axis, keepdims=keepdims)
     except:
-        return tf.reduce_sum(input_tensor, axis=axis, keep_dims=keepdims)
+        return tf.reduce_sum(input_tensor, axis=axis, keepdims=keepdims)
 
 
 # For version compatibility
